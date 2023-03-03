@@ -1,17 +1,10 @@
 ci-success:
-  on:
-    push:
-      branches: [main]
   name: ci
   if: ${{ success() }}
   needs:
     - checks
+    - long-checks
   runs-on: ubuntu-latest
   steps:
-    - id: build
-      name: Build
-      run: |
-        echo 'built'
-
     - name: CI succeeded
       run: exit 0
