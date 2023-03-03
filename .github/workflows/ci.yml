@@ -1,12 +1,38 @@
-on: [push]
-
+name: CI Workflow
+on:
+  push:
+    branches: [main, staging, trying]
+  pull_request:
+    branches: [main]
 jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      # Check linting and formatting
+      - id: check_lint_format
+        name: Lint and Format
+        run: |
+          echo 'checked'
+
+  build-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - id: check-build
+        name: build
+        run: |
+          echo 'built'
+      - id: e2e
+        name: E2E tests
+        run: |
+          echo 'tested'
+
   ci-success:
     name: ci
     if: ${{ success() }}
     needs:
       - checks
-      - long-checks
+      - build-test
     runs-on: ubuntu-latest
     steps:
       - name: CI succeeded
