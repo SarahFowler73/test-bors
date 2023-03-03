@@ -1,4 +1,7 @@
 name: My Long Workflow
+on:
+push:
+  branches: [main]
 jobs:
   tests:
     runs-on: ubuntu-latest

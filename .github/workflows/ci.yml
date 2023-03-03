@@ -3,8 +3,12 @@ ci-success:
   if: ${{ success() }}
   needs:
     - checks
-    - build-and-test
   runs-on: ubuntu-latest
   steps:
+    - id: build
+      name: Build
+      run: |
+        echo 'built'
+
     - name: CI succeeded
       run: exit 0
