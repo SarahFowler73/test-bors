@@ -1,0 +1,9 @@
+name: My Long Workflow
+jobs:
+  tests:
+    runs-on: self-hosted
+    steps:
+      - id: build
+        name: Build
+        run: |
+          echo 'built'
