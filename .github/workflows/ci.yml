@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  ci-success:
+    name: ci
+    if: ${{ success() }}
+    needs:
+      - checks
+      - long-checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: CI succeeded
+        run: exit 0
