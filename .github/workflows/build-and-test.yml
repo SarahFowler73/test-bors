@@ -1,7 +1,7 @@
 name: My Long Workflow
 jobs:
   tests:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - id: build
         name: Build

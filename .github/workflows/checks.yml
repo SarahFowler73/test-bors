@@ -9,7 +9,7 @@ on:
       - ready_for_review
 jobs:
   tests:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       # Check linting and formatting
       - id: check_lint_format
