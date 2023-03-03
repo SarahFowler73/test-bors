@@ -2,8 +2,6 @@ name: CI Workflow
 on:
   push:
     branches: [main, staging, trying]
-  # pull_request:
-  #   branches: [main]
 jobs:
   checks:
     runs-on: ubuntu-latest
