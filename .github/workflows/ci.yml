@@ -1,4 +1,7 @@
 ci-success:
+  on:
+    push:
+      branches: [main]
   name: ci
   if: ${{ success() }}
   needs:
